@@ -6,7 +6,6 @@ MY CSS
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
-    padding: 20px;
   }
   
   @media only screen and (min-width: 600px) {
@@ -42,14 +41,11 @@ MY CSS
   }
 
   .row{
-    display: flex; /* Flexbox ensures columns stay in the same row */
-  flex-wrap: wrap; /* Allows wrapping if necessary */
-  margin: 0 -10px; /* Optional: Handles spacing between columns */
+    margin: 0;
   }
 
 * {
     padding-top: 10px;
-    box-sizing: border-box;
     
 }
 .outfit-Bold {
@@ -86,7 +82,9 @@ p {
     line-height: 1.5;
 }
 .container {
-     
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Main content and sidebar */
+    grid-gap: 20px;
     font-family: Arial, sans-serif;
     background-color: #d5e1d5; /* Matches background */
   }
@@ -173,7 +171,7 @@ padding-top: 50px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-     
+    padding-left: 20px;
     align-items: center;
 }
  
@@ -189,7 +187,7 @@ padding-top: 50px;
     margin: 0;
     align-content: center;
     padding-left: 20px;
-     
+    padding-right: 20px;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -205,7 +203,7 @@ padding-top: 50px;
     margin: 0;
     align-content: center;
     padding-left: 20px;
-     
+    padding-right: 20px;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;

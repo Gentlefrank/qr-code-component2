@@ -6,6 +6,7 @@ MY CSS
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
+    box-sizing: border-box; 
   }
   
   @media only screen and (min-width: 600px) {
@@ -41,13 +42,18 @@ MY CSS
   }
 
   .row{
-    margin: 0;
+    display: flex; /* Flexbox ensures columns stay in the same row */
+  flex-wrap: wrap; /* Allows wrapping if necessary */
+  margin: 0 -10px; /* Optional: Handles spacing between columns */
   }
 
-* {
+  *,
+  *::before,
+  *::after {
     padding-top: 10px;
-    
-}
+    box-sizing: border-box;
+  }
+  
 .outfit-Bold {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -67,7 +73,7 @@ body{
     background-color: #d5e1d5;
     margin: 0px;
     padding-top: 20px;
-   
+    
 }
 
 h4 {
@@ -82,9 +88,7 @@ p {
     line-height: 1.5;
 }
 .container {
-    display: grid;
-    grid-template-columns: 3fr 2fr; /* Main content and sidebar */
-    grid-gap: 20px;
+      
     font-family: Arial, sans-serif;
     background-color: #d5e1d5; /* Matches background */
   }
@@ -103,7 +107,6 @@ padding-top: 50px;
     border-top-right-radius: 50px;
     background-color: white;
    
-    height: 100vh;
     padding-left: 100px;
     position: relative;
     overflow: visible;
@@ -127,19 +130,41 @@ padding-top: 50px;
     color: #3b82f6;
   }
   
+  @media only screen and (max-width: 600px) {
+  
+   .box {
+        width: 100%; /* Stack columns vertically */
+        height: 500px;
+        border-top: 20px solid black;
+        border-right: 10px solid black;
+        border-left: 10px solid black;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-image: url("design/mobile-design.jpg") ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+    }
+  }
+
+  @media only screen and (min-width: 768px)  {
 .box {
     border-top: 20px solid black;
     border-right: 10px solid black;
     border-left: 10px solid black;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    background-image: url("design/desktop-design.jpg") ;
+    background-image:  url("design/desktop-design.jpg")  ;
     background-repeat: no-repeat;
-    background-size: contain;
-   width: auto;
-    height: 53vh;
+    background-size:cover;
+    background-position:center;
+    width: 100%;
+    height: 300px;
+    text-align: center;
 }
-
+  }
+  
+    
 .content {
     
     padding-right: 60px;
@@ -171,7 +196,7 @@ padding-top: 50px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    padding-left: 20px;
+     
     align-items: center;
 }
  
@@ -187,7 +212,7 @@ padding-top: 50px;
     margin: 0;
     align-content: center;
     padding-left: 20px;
-    padding-right: 20px;
+     
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -203,7 +228,7 @@ padding-top: 50px;
     margin: 0;
     align-content: center;
     padding-left: 20px;
-    padding-right: 20px;
+     
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -220,3 +245,7 @@ padding-top: 50px;
      
 }
 
+.package {
+    padding-left: 30px;
+    padding-right: 30px;
+}
