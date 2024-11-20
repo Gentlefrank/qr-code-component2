@@ -6,6 +6,7 @@ MY CSS
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
+    padding: 0 20px;
     box-sizing: border-box; 
   }
   
@@ -99,9 +100,11 @@ p {
     top: 70px;
     height: 70vh;
     position: relative;
-    overflow: visible;
-    width: 100%;
+    overflow: hidden;
+    width: 80%;
     text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .box{
@@ -119,7 +122,6 @@ p {
 .qr{
   color: white;
   position: relative;
-  
   justify-content: center ;
   display: flex;
 
